@@ -43,7 +43,7 @@ This guarantees exactly three deterministic picks for any input.
 
 ## Roadmap
 
-See the [PRD](./PRD.md) for the full plan. Highlights:
+See the [PRD](./prd.md) for the full plan. Highlights:
 
 1. Add a third question (e.g. *solo vs. with someone*).
 2. Grow catalog to ~50 titles, move to `movies.json`.
