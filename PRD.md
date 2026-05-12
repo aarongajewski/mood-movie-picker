@@ -148,3 +148,16 @@ The catalog is **stubbed in code** — no network calls, no JSON file, no API. I
 ---
 
 > **Rule of thumb for the v0 cut:** if a feature requires a new system (API keys, routing, state persistence, build tooling), it waits for v2. A curated list + two inputs + three outputs is the whole product.
+
+## 16. v1 Weekend Upgrade Scope
+
+The weekend v1 keeps the app static and curated, but moves beyond the original
+single-file v0 constraints:
+
+- **Third input:** add `watchingWith` (`Solo`, `Date night`, `Friends`, `Family`) so picks account for the room.
+- **Curated JSON catalog:** move movie data to `data/movies.json`, including real titles, TMDb IDs, tags, boosts, and hand-written reasons.
+- **Scored matching:** rank by vibe, energy, watching context, tags, and curated boost while still guaranteeing exactly three results.
+- **Result roles:** label cards as `Safe pick`, `Conversation pick`, and `Wild card` to make the shortlist feel more intentional.
+- **Try 3 more:** rotate deterministically through more high-scoring picks for the same selections.
+- **Shareable URLs:** encode selected filters and result set in query params.
+- **TMDb enrichment:** use a local-only `scripts/refresh-tmdb.js` script to refresh `data/tmdb-cache.json`; the browser reads only the committed cache and never sees a TMDb token.

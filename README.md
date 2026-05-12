@@ -1,56 +1,86 @@
 # Mood Movie Picker
 
-Pick a mood. Get three movies. Two taps, no scrolling.
+Pick the night. Skip the scroll.
 
-A tiny, single-page web app that recommends three movies based on your current
-**vibe** (Cozy, Sad, Fun, Tense, Romantic) and **energy level** (Chill, Medium,
-Hype). Designed to be the smallest possible useful version of itself: one HTML
-file, no build step, no backend, no third-party APIs. The demo catalog is
-hardcoded but uses real movies, years, runtimes, and tailored reasons so the
-recommendations feel credible in a walkthrough.
+A tiny static web app that recommends three movies based on your current
+**vibe**, **energy level**, and **who's watching**. The recommendations are
+curated locally for demo quality, then enriched from a committed TMDb metadata
+cache so the browser never needs an API secret.
 
 ## Run it
 
+Because the app loads local JSON files, serve the project from a local static
+server:
+
 ```bash
-open index.html
+python3 -m http.server 4173
 ```
 
-…or serve it from any static host.
+Then open <http://127.0.0.1:4173/index.html>.
 
-## Design tenets (v0)
+## What's in v1
 
-- **No external APIs.** The movie catalog is a curated JavaScript array in
-  `index.html`, with real titles and demo-ready recommendation copy.
-- **No accounts, no database, no analytics.** Nothing leaves your browser.
-- **No build step.** A single `index.html` with inline CSS and JS.
-- **Always returns 3 picks.** No empty states.
+- **Curated catalog:** `data/movies.json` contains real movie picks, matching
+  fields, tags, and hand-written reasons.
+- **Static metadata cache:** `data/tmdb-cache.json` contains safe public movie
+  metadata used by the UI.
+- **Three inputs:** vibe, energy, and watching context.
+- **Lightweight scoring:** the app scores curated titles and always returns
+  exactly three.
+- **Result roles:** cards are labeled as `Safe pick`, `Conversation pick`, or
+  `Wild card`.
+- **Try 3 more:** rotates deterministically through more scored picks.
+- **Shareable URLs:** selected filters and result set are encoded in the URL.
 
-## Stack
+## Optional TMDb refresh
 
-- One HTML file
-- Vanilla JS + CSS
-- Zero runtime dependencies
+The app does not call TMDb from the browser. To refresh the static cache locally:
 
-## How matching works
+1. Create a `.env` file with a TMDb v4 read access token:
 
-For a chosen `(vibe, energy)`:
+   ```bash
+   TMDB_TOKEN=your_token_here
+   ```
 
-1. Take all movies whose `vibes` include the chosen vibe **and** whose `energy`
-   matches.
-2. If fewer than 3, fill from movies that match the vibe only (any energy).
-3. If still fewer than 3, fill from the rest of the catalog.
+2. Run:
 
-This guarantees exactly three deterministic picks for any input.
+   ```bash
+   node scripts/refresh-tmdb.js
+   ```
 
-## Roadmap
+3. Commit the updated `data/tmdb-cache.json`.
 
-See the [PRD](./PRD.md) for the full plan. Highlights:
+`.env` is already ignored by git.
 
-1. Add a third question (e.g. *solo vs. with someone*).
-2. Grow catalog to ~50 titles, move to `movies.json`.
-3. Add a Shuffle to surface new picks on repeat runs.
-4. Integrate TMDb for posters and metadata (first external API).
-5. Replace the hardcoded catalog with a real movie metadata provider.
+## Data model
+
+Each curated movie includes:
+
+```json
+{
+  "tmdbId": 546554,
+  "title": "Knives Out",
+  "vibes": ["Fun", "Tense"],
+  "energy": "Medium",
+  "watchingWith": ["Family", "Friends", "Date night"],
+  "tags": ["mystery", "ensemble", "clever"],
+  "boost": 3,
+  "reason": "Slick mystery structure with enough humor to keep it approachable."
+}
+```
+
+## Validation
+
+Useful checks:
+
+```bash
+python3 -m json.tool data/movies.json >/dev/null
+python3 -m json.tool data/tmdb-cache.json >/dev/null
+node --check scripts/refresh-tmdb.js
+```
+
+The browser smoke path is: select a vibe, energy, and watching context; submit;
+click `Try 3 more`; reload the generated URL and confirm the same state returns.
 
 ## License
 

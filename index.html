@@ -7,16 +7,15 @@
 	<meta name="description" content="Pick a mood. Get three movies. Two taps, no scrolling.">
 	<style>
 		:root {
-			--bg: #070911;
-			--panel: rgba(255, 255, 255, .075);
-			--panel-strong: rgba(255, 255, 255, .12);
-			--line: rgba(255, 255, 255, .14);
+			--bg: #090a0f;
+			--panel: rgba(255, 255, 255, .065);
+			--panel-strong: rgba(255, 255, 255, .1);
+			--line: rgba(255, 255, 255, .11);
 			--text: #f7f1e8;
-			--muted: #aeb4c2;
-			--accent: #f7c873;
-			--accent-2: #8ee3ef;
+			--muted: #a8adba;
+			--accent: #f5c46b;
+			--accent-2: #a9dce4;
 			--ink: #17110a;
-			--shadow: 0 32px 100px rgba(0, 0, 0, .42);
 			color-scheme: dark;
 		}
 
@@ -26,29 +25,28 @@
 			margin: 0;
 			min-height: 100vh;
 			background:
-				radial-gradient(circle at 18% 18%, rgba(142, 227, 239, .18), transparent 24rem),
-				radial-gradient(circle at 82% 4%, rgba(247, 200, 115, .18), transparent 24rem),
-				linear-gradient(135deg, #070911 0%, #11162a 48%, #080a12 100%);
+				radial-gradient(circle at 24% 12%, rgba(245, 196, 107, .16), transparent 30rem),
+				linear-gradient(145deg, #08090e 0%, #11131d 52%, #07080c 100%);
 			color: var(--text);
 			font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 			line-height: 1.45;
 		}
 
 		main {
-			width: min(100% - 32px, 1080px);
+			width: min(100% - 40px, 1160px);
 			margin: 0 auto;
-			padding: 48px 0;
+			padding: 56px 0;
 		}
 
 		.hero {
 			display: grid;
-			grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
-			gap: 28px;
-			align-items: start;
+			grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+			gap: 44px;
+			align-items: center;
 		}
 
 		.kicker, legend, .label {
-			color: var(--accent-2);
+			color: var(--accent);
 			font-size: .75rem;
 			font-weight: 850;
 			letter-spacing: .11em;
@@ -64,33 +62,24 @@
 		}
 
 		.lede {
-			max-width: 640px;
+			max-width: 650px;
 			margin: 0 0 26px;
 			color: var(--muted);
 			font-size: clamp(1.05rem, 2vw, 1.3rem);
 		}
 
-		.stat-row {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 10px;
+		.proof-line {
 			margin-top: 28px;
-		}
-
-		.stat {
-			border: 1px solid var(--line);
-			border-radius: 999px;
-			background: rgba(255, 255, 255, .06);
-			padding: 9px 13px;
-			color: var(--muted);
-			font-size: .9rem;
+			color: #d8d3ca;
+			font-size: .95rem;
+			font-weight: 750;
 		}
 
 		.panel {
 			border: 1px solid var(--line);
-			border-radius: 28px;
+			border-radius: 30px;
 			background: linear-gradient(180deg, var(--panel-strong), var(--panel));
-			box-shadow: var(--shadow);
+			box-shadow: 0 28px 90px rgba(0, 0, 0, .38);
 			backdrop-filter: blur(18px);
 		}
 
@@ -111,7 +100,7 @@
 		.choices {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
-			gap: 10px;
+			gap: 8px;
 		}
 
 		input[type="radio"] {
@@ -122,12 +111,12 @@
 
 		label {
 			display: grid;
-			gap: 2px;
-			min-height: 76px;
+			min-height: 52px;
+			place-items: center;
 			border: 1px solid var(--line);
-			border-radius: 18px;
-			background: rgba(255, 255, 255, .055);
-			padding: 14px;
+			border-radius: 14px;
+			background: rgba(255, 255, 255, .04);
+			padding: 12px 14px;
 			cursor: pointer;
 			transition: transform .16s ease, border-color .16s ease, background .16s ease;
 		}
@@ -135,39 +124,38 @@
 		label:hover { transform: translateY(-1px); border-color: rgba(255, 255, 255, .3); }
 
 		input[type="radio"]:checked + label {
-			border-color: rgba(247, 200, 115, .9);
-			background: linear-gradient(135deg, rgba(247, 200, 115, .26), rgba(142, 227, 239, .12));
+			border-color: rgba(245, 196, 107, .78);
+			background: rgba(245, 196, 107, .13);
 		}
 
-		input[type="radio"]:focus-visible + label, button:focus-visible {
+		input[type="radio"]:focus-visible + label, button:focus-visible, a:focus-visible {
 			outline: 3px solid rgba(142, 227, 239, .65);
 			outline-offset: 3px;
 		}
 
 		.choice-title { font-weight: 850; }
-		.choice-note { color: var(--muted); font-size: .83rem; }
 
-		button {
-			width: 100%;
+		button, .share-link {
 			border: 0;
 			border-radius: 18px;
-			padding: 16px 18px;
+			padding: 14px 16px;
 			font: inherit;
 			font-weight: 900;
+			text-decoration: none;
 			cursor: pointer;
 			transition: transform .16s ease, opacity .16s ease;
 		}
 
-		button:not(:disabled):hover { transform: translateY(-1px); }
+		button:not(:disabled):hover, .share-link:hover { transform: translateY(-1px); }
 		button:disabled { cursor: not-allowed; opacity: .42; }
 
 		.primary {
+			width: 100%;
 			background: linear-gradient(135deg, var(--accent), #ffe1a9);
 			color: var(--ink);
 		}
 
-		.secondary {
-			width: auto;
+		.secondary, .share-link {
 			border: 1px solid var(--line);
 			background: rgba(255, 255, 255, .06);
 			color: var(--text);
@@ -193,6 +181,13 @@
 			margin-bottom: 18px;
 		}
 
+		.result-actions {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: flex-end;
+			gap: 10px;
+		}
+
 		.results h2 {
 			margin: 4px 0 0;
 			font-size: clamp(1.8rem, 4vw, 3rem);
@@ -202,7 +197,7 @@
 		ol {
 			display: grid;
 			grid-template-columns: repeat(3, minmax(0, 1fr));
-			gap: 14px;
+			gap: 18px;
 			margin: 0;
 			padding: 0;
 			list-style: none;
@@ -211,86 +206,104 @@
 		.movie {
 			position: relative;
 			overflow: hidden;
-			min-height: 250px;
-			border: 1px solid var(--line);
-			border-radius: 24px;
-			background: linear-gradient(150deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .045));
-			padding: 18px;
+			border: 1px solid rgba(255, 255, 255, .12);
+			border-radius: 26px;
+			background: rgba(255, 255, 255, .055);
+			box-shadow: 0 18px 60px rgba(0, 0, 0, .28);
 		}
 
-		.movie::before {
+		.poster {
+			position: relative;
+			display: grid;
+			aspect-ratio: 2 / 3;
+			min-height: 340px;
+			place-items: center;
+			overflow: hidden;
+			background:
+				radial-gradient(circle at 70% 10%, rgba(245, 196, 107, .32), transparent 13rem),
+				linear-gradient(145deg, rgba(255, 255, 255, .1), rgba(255, 255, 255, .025));
+		}
+
+		.poster::after {
 			content: "";
 			position: absolute;
-			inset: -45% -25% auto auto;
-			width: 180px;
-			height: 180px;
-			border-radius: 50%;
-			background: var(--glow, rgba(247, 200, 115, .2));
-			filter: blur(10px);
+			inset: auto 0 0;
+			z-index: 2;
+			height: 44%;
+			background: linear-gradient(180deg, transparent, rgba(7, 8, 12, .84));
+			pointer-events: none;
 		}
 
-		.rank {
-			position: relative;
-			display: inline-grid;
-			width: 36px;
-			height: 36px;
-			place-items: center;
-			border-radius: 12px;
-			background: rgba(255, 255, 255, .12);
-			color: var(--accent);
+		.poster img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			inset: 0;
+			z-index: 1;
+		}
+
+		.poster-fallback {
+			z-index: 0;
+			max-width: 80%;
+			text-align: center;
+			font-size: clamp(1.5rem, 3vw, 2rem);
 			font-weight: 950;
+			letter-spacing: -.05em;
+		}
+
+		.movie-body { padding: 18px; }
+
+		.role {
+			display: block;
+			color: var(--accent);
+			font-size: .76rem;
+			font-weight: 850;
+			letter-spacing: .08em;
+			text-transform: uppercase;
 		}
 
 		.movie h3 {
-			position: relative;
-			margin: 56px 0 6px;
+			margin: 12px 0 6px;
 			font-size: 1.35rem;
 			line-height: 1.05;
 			letter-spacing: -.03em;
 		}
 
 		.meta {
-			position: relative;
 			color: var(--muted);
 			font-size: .88rem;
 		}
 
 		.reason {
-			position: relative;
-			margin: 16px 0 0;
+			margin: 14px 0 0;
 			color: #dfe4ed;
 		}
 
-		.tags {
-			position: relative;
-			display: flex;
-			flex-wrap: wrap;
-			gap: 6px;
-			margin-top: 18px;
-		}
-
-		.tag {
-			border: 1px solid var(--line);
-			border-radius: 999px;
-			background: rgba(255, 255, 255, .07);
-			padding: 5px 8px;
-			color: var(--muted);
-			font-size: .78rem;
+		.error {
+			border: 1px solid rgba(255, 155, 155, .35);
+			border-radius: 16px;
+			background: rgba(255, 155, 155, .08);
+			margin-top: 16px;
+			padding: 14px;
+			color: #ffd0d0;
 		}
 
 		[hidden] { display: none !important; }
 		footer { margin-top: 24px; color: var(--muted); text-align: center; font-size: .9rem; }
 
-		@media (max-width: 860px) {
+		@media (max-width: 900px) {
 			.hero, ol { grid-template-columns: 1fr; }
 			.picker { position: static; }
 			.results-head { align-items: start; flex-direction: column; }
+			.result-actions { justify-content: flex-start; }
 		}
 
-		@media (max-width: 480px) {
-			main { width: min(100% - 22px, 1080px); padding: 28px 0; }
+		@media (max-width: 520px) {
+			main { width: min(100% - 22px, 1120px); padding: 28px 0; }
 			.choices { grid-template-columns: 1fr; }
 			.panel, .movie { border-radius: 22px; }
+			.poster { min-height: 300px; }
 		}
 	</style>
 </head>
@@ -300,12 +313,8 @@
 			<header>
 				<div class="kicker">Mood Movie Picker</div>
 				<h1>Pick the night. Skip the scroll.</h1>
-				<p class="lede">Choose a vibe and energy level, then get three real, curated movie picks that feel believable in a demo.</p>
-				<div class="stat-row" aria-label="Product constraints">
-					<span class="stat">No accounts</span>
-					<span class="stat">No APIs</span>
-					<span class="stat">Exactly 3 picks</span>
-				</div>
+				<p class="lede">Choose the mood, pace, and room. Get three curated movie picks with enough real metadata to feel demo-ready.</p>
+				<p class="proof-line">Three inputs. Three picks. No account, no API key in the browser.</p>
 			</header>
 
 			<section class="panel picker" aria-labelledby="picker-title">
@@ -313,8 +322,10 @@
 				<form id="form">
 					<fieldset id="vibes"></fieldset>
 					<fieldset id="energies"></fieldset>
+					<fieldset id="watching"></fieldset>
 					<button class="primary" id="submit" type="submit" disabled>Get three picks</button>
-					<p class="hint">Pick one mood and one pace.</p>
+					<p class="hint" id="hint">Loading the curated catalog...</p>
+					<div class="error" id="error" hidden></div>
 				</form>
 			</section>
 		</section>
@@ -322,121 +333,278 @@
 		<section class="panel results" id="results" aria-labelledby="results-title" hidden>
 			<div class="results-head">
 				<div>
-					<div class="label">Curated shortlist</div>
+					<div class="label" id="result-context">Curated shortlist</div>
 					<h2 id="results-title">Three that fit</h2>
 				</div>
-				<button class="secondary" id="reset" type="button">Start over</button>
+				<div class="result-actions">
+					<button class="secondary" id="more" type="button">Try 3 more</button>
+					<a class="share-link" id="share" href="#">Share</a>
+					<button class="secondary" id="reset" type="button">Start over</button>
+				</div>
 			</div>
 			<ol id="pick-list"></ol>
 		</section>
 
-		<footer>Hardcoded v0 catalog. Built for a fast local demo.</footer>
+		<footer>Hybrid v1 demo: curated recommendations, static TMDb metadata, no browser API secret.</footer>
 	</main>
 
 	<script>
-		const VIBES = [
-			["Cozy", "warm, low-friction"],
-			["Sad", "cathartic, thoughtful"],
-			["Fun", "light, crowd-ready"],
-			["Tense", "gripping, focused"],
-			["Romantic", "sweet, yearning"],
-		];
-		const ENERGIES = [
-			["Chill", "slow and gentle"],
-			["Medium", "steady momentum"],
-			["Hype", "big-screen charge"],
-		];
-		const CATALOG = [
-			{ title: "Paddington 2", year: 2017, runtime: "104 min", vibes: ["Cozy", "Fun"], energy: "Chill", tags: ["kind", "funny"], glow: "rgba(247, 200, 115, .32)", reason: "Pure comfort without becoming sleepy, with jokes that work for almost anyone." },
-			{ title: "Chef", year: 2014, runtime: "114 min", vibes: ["Cozy", "Fun"], energy: "Chill", tags: ["food", "feel-good"], glow: "rgba(247, 200, 115, .28)", reason: "A relaxed reset movie: warm, tasty, and easy to settle into." },
-			{ title: "Columbus", year: 2017, runtime: "104 min", vibes: ["Cozy", "Sad", "Romantic"], energy: "Chill", tags: ["quiet", "beautiful"], glow: "rgba(142, 227, 239, .25)", reason: "Soft-spoken and reflective, perfect when you want emotion without melodrama." },
-			{ title: "Little Women", year: 2019, runtime: "135 min", vibes: ["Cozy", "Romantic", "Sad"], energy: "Medium", tags: ["literary", "heart"], glow: "rgba(247, 200, 115, .24)", reason: "Cozy textures, romantic ache, and enough movement to keep the night alive." },
-			{ title: "The Grand Budapest Hotel", year: 2014, runtime: "100 min", vibes: ["Cozy", "Fun"], energy: "Medium", tags: ["stylized", "witty"], glow: "rgba(255, 155, 179, .25)", reason: "A precise, candy-colored adventure that feels light but never thin." },
-			{ title: "School of Rock", year: 2003, runtime: "109 min", vibes: ["Fun", "Cozy"], energy: "Hype", tags: ["music", "crowd"], glow: "rgba(247, 200, 115, .3)", reason: "Instant energy, low stakes, and still one of the safest crowd-pleasers." },
-			{ title: "Palm Springs", year: 2020, runtime: "90 min", vibes: ["Fun", "Romantic"], energy: "Medium", tags: ["smart", "breezy"], glow: "rgba(142, 227, 239, .25)", reason: "Funny and romantic with a sharp premise, ideal when you want easy but not empty." },
-			{ title: "Game Night", year: 2018, runtime: "100 min", vibes: ["Fun", "Tense"], energy: "Hype", tags: ["comedy", "chaos"], glow: "rgba(255, 155, 179, .28)", reason: "A joke machine with thriller pacing, great for a lively demo pick." },
-			{ title: "Knives Out", year: 2019, runtime: "130 min", vibes: ["Fun", "Tense"], energy: "Medium", tags: ["mystery", "ensemble"], glow: "rgba(247, 200, 115, .22)", reason: "Slick mystery structure with enough humor to keep it approachable." },
-			{ title: "Arrival", year: 2016, runtime: "116 min", vibes: ["Sad", "Tense"], energy: "Medium", tags: ["sci-fi", "emotional"], glow: "rgba(142, 227, 239, .22)", reason: "Brainy tension that lands as a surprisingly emotional gut punch." },
-			{ title: "Aftersun", year: 2022, runtime: "101 min", vibes: ["Sad"], energy: "Chill", tags: ["memory", "intimate"], glow: "rgba(142, 227, 239, .18)", reason: "Quiet, devastating, and perfect when the mood is reflective rather than loud." },
-			{ title: "Past Lives", year: 2023, runtime: "106 min", vibes: ["Sad", "Romantic"], energy: "Chill", tags: ["yearning", "restrained"], glow: "rgba(255, 155, 179, .2)", reason: "A grounded romantic ache that feels current, adult, and demo-ready." },
-			{ title: "Eternal Sunshine of the Spotless Mind", year: 2004, runtime: "108 min", vibes: ["Sad", "Romantic"], energy: "Medium", tags: ["surreal", "breakup"], glow: "rgba(142, 227, 239, .24)", reason: "Inventive and emotionally messy in the exact way a sad-romantic night wants." },
-			{ title: "Before Sunrise", year: 1995, runtime: "101 min", vibes: ["Romantic", "Cozy"], energy: "Chill", tags: ["talky", "intimate"], glow: "rgba(247, 200, 115, .22)", reason: "Low-key, sincere, and built almost entirely out of chemistry." },
-			{ title: "Rye Lane", year: 2023, runtime: "82 min", vibes: ["Romantic", "Fun"], energy: "Medium", tags: ["fresh", "bright"], glow: "rgba(255, 155, 179, .3)", reason: "Modern rom-com energy with style, color, and a short runtime." },
-			{ title: "The Worst Person in the World", year: 2021, runtime: "128 min", vibes: ["Romantic", "Sad"], energy: "Medium", tags: ["messy", "modern"], glow: "rgba(255, 155, 179, .24)", reason: "Romantic, funny, and bruising in a way that feels very real." },
-			{ title: "Decision to Leave", year: 2022, runtime: "139 min", vibes: ["Romantic", "Tense"], energy: "Medium", tags: ["noir", "obsession"], glow: "rgba(142, 227, 239, .25)", reason: "A sleek romantic mystery when you want desire and suspense together." },
-			{ title: "Sicario", year: 2015, runtime: "121 min", vibes: ["Tense"], energy: "Medium", tags: ["procedural", "dread"], glow: "rgba(142, 227, 239, .2)", reason: "Controlled, adult tension that never needs to shout." },
-			{ title: "Mad Max: Fury Road", year: 2015, runtime: "120 min", vibes: ["Tense", "Fun"], energy: "Hype", tags: ["action", "kinetic"], glow: "rgba(247, 200, 115, .34)", reason: "The cleanest answer for maximum momentum and zero boredom." },
-			{ title: "Uncut Gems", year: 2019, runtime: "135 min", vibes: ["Tense"], energy: "Hype", tags: ["stress", "chaos"], glow: "rgba(255, 155, 179, .28)", reason: "Relentless pressure, ideal if the goal is to feel your pulse." },
-			{ title: "The Nice Guys", year: 2016, runtime: "116 min", vibes: ["Fun", "Tense"], energy: "Hype", tags: ["buddy", "crime"], glow: "rgba(247, 200, 115, .26)", reason: "Fast, funny, and sharper than the average action-comedy fallback." },
+		const OPTIONS = {
+			vibe: [
+				["Cozy", "warm, low-friction"],
+				["Sad", "cathartic, thoughtful"],
+				["Fun", "light, crowd-ready"],
+				["Tense", "gripping, focused"],
+				["Romantic", "sweet, yearning"],
+			],
+			energy: [
+				["Chill", "slow and gentle"],
+				["Medium", "steady momentum"],
+				["Hype", "big-screen charge"],
+			],
+			watching: [
+				["Solo", "personal pick"],
+				["Date night", "chemistry matters"],
+				["Friends", "group-friendly"],
+				["Family", "broad appeal"],
+			],
+		};
+
+		const ROLE_RULES = [
+			["Safe pick", ["comfort", "feel-good", "crowd", "family", "funny", "kind"]],
+			["Conversation pick", ["thoughtful", "clever", "adult", "mystery", "reflective", "intimate"]],
+			["Wild card", ["chaos", "stress", "spectacle", "sleek", "surreal", "kinetic"]],
 		];
 
 		const form = document.querySelector("#form");
 		const submit = document.querySelector("#submit");
-		const picker = document.querySelector(".picker");
+		const hint = document.querySelector("#hint");
+		const error = document.querySelector("#error");
 		const results = document.querySelector("#results");
 		const list = document.querySelector("#pick-list");
+		const more = document.querySelector("#more");
 		const reset = document.querySelector("#reset");
+		const share = document.querySelector("#share");
+		const resultContext = document.querySelector("#result-context");
+
+		let movies = [];
+		let metadata = new Map();
+		let resultSet = 0;
 
 		function buildChoices(id, legend, choices) {
 			const fieldset = document.querySelector(id);
 			fieldset.innerHTML = `<legend>${legend}</legend><div class="choices"></div>`;
 			for (const [value, note] of choices) {
-				const inputId = `${legend.toLowerCase()}-${value.toLowerCase().replaceAll(" ", "-")}`;
+				const inputId = `${legend}-${value}`.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 				fieldset.querySelector(".choices").insertAdjacentHTML("beforeend", `
-					<input id="${inputId}" name="${legend.toLowerCase()}" value="${value}" type="radio">
-					<label for="${inputId}"><span class="choice-title">${value}</span><span class="choice-note">${note}</span></label>
+					<input id="${inputId}" name="${id.replace("#", "")}" value="${escapeHtml(value)}" type="radio">
+					<label for="${inputId}" title="${escapeHtml(note)}"><span class="choice-title">${escapeHtml(value)}</span></label>
 				`);
 			}
 		}
 
+		function escapeHtml(value) {
+			return String(value).replace(/[&<>"']/g, (char) => ({
+				"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+			}[char]));
+		}
+
 		function selected() {
-			return { vibe: form.elements.vibe.value, energy: form.elements.energy.value };
+			return {
+				vibe: form.querySelector('input[name="vibes"]:checked')?.value || "",
+				energy: form.querySelector('input[name="energies"]:checked')?.value || "",
+				watching: form.querySelector('input[name="watching"]:checked')?.value || "",
+			};
 		}
 
-		function pickThree(vibe, energy) {
-			const exact = CATALOG.filter((movie) => movie.vibes.includes(vibe) && movie.energy === energy);
-			const vibeOnly = CATALOG.filter((movie) => movie.vibes.includes(vibe) && movie.energy !== energy);
-			const rest = CATALOG.filter((movie) => !movie.vibes.includes(vibe));
-			return [...exact, ...vibeOnly, ...rest].slice(0, 3);
+		function scoreMovie(movie, picks) {
+			let score = movie.boost || 0;
+			if (movie.vibes.includes(picks.vibe)) score += 5;
+			if (movie.energy === picks.energy) score += 3;
+			else if (movie.energy === "Medium" || picks.energy === "Medium") score += 1;
+			else score -= 1;
+			if (movie.watchingWith.includes(picks.watching)) score += 3;
+			else score -= 1;
+			const usefulTags = new Set(["comfort", "crowd", "thoughtful", "clever", "spectacle", "intimate", "family", "modern"]);
+			score += movie.tags.filter((tag) => usefulTags.has(tag)).length;
+			return score;
 		}
 
-		function renderMovie(movie, index, vibe, energy) {
+		function scoredMovies(picks) {
+			return movies
+				.map((movie, index) => ({ movie, index, score: scoreMovie(movie, picks) }))
+				.sort((a, b) => b.score - a.score || a.index - b.index);
+		}
+
+		function roleFor(movie, usedRoles) {
+			for (const [role, tags] of ROLE_RULES) {
+				if (!usedRoles.has(role) && tags.some((tag) => movie.tags.includes(tag))) return role;
+			}
+			return ROLE_RULES.find(([role]) => !usedRoles.has(role))?.[0] || "Curated pick";
+		}
+
+		function pickThree(picks, offset) {
+			const ranked = scoredMovies(picks);
+			const windowed = ranked.slice(offset * 3).concat(ranked).slice(0, Math.min(ranked.length, offset * 3 + 9));
+			const used = new Set();
+			const usedRoles = new Set();
+			const selectedMovies = [];
+			for (const item of windowed) {
+				if (used.has(item.movie.tmdbId)) continue;
+				const role = roleFor(item.movie, usedRoles);
+				used.add(item.movie.tmdbId);
+				usedRoles.add(role);
+				selectedMovies.push({ ...item, role });
+				if (selectedMovies.length === 3) break;
+			}
+			return selectedMovies;
+		}
+
+		function metadataFor(movie) {
+			return metadata.get(String(movie.tmdbId)) || {};
+		}
+
+		function posterMarkup(movie, meta) {
+			const title = escapeHtml(movie.title);
+			if (!meta.posterUrl) return `<div class="poster"><div class="poster-fallback">${title}</div></div>`;
 			return `
-				<li class="movie" style="--glow: ${movie.glow}">
-					<span class="rank">${index + 1}</span>
-					<h3>${movie.title}</h3>
-					<div class="meta">${movie.year} · ${movie.runtime} · ${vibe} + ${energy}</div>
-					<p class="reason">${movie.reason}</p>
-					<div class="tags">${movie.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}</div>
+				<div class="poster">
+					<img src="${escapeHtml(meta.posterUrl)}" alt="${title} poster" loading="lazy" onerror="this.remove()">
+					<div class="poster-fallback">${title}</div>
+				</div>
+			`;
+		}
+
+		function renderMovie(item, picks) {
+			const movie = item.movie;
+			const meta = metadataFor(movie);
+			const year = (meta.releaseDate || "").slice(0, 4) || "TBD";
+			const runtime = meta.runtime ? `${meta.runtime} min` : "runtime TBD";
+			const rating = meta.voteAverage ? ` · TMDb ${Number(meta.voteAverage).toFixed(1)}` : "";
+			return `
+				<li class="movie">
+					${posterMarkup(movie, meta)}
+					<div class="movie-body">
+						<span class="role">${escapeHtml(item.role)}</span>
+						<h3>${escapeHtml(movie.title)}</h3>
+						<div class="meta">${escapeHtml(year)} · ${escapeHtml(runtime)}${escapeHtml(rating)} · ${escapeHtml(picks.vibe)} + ${escapeHtml(picks.energy)}</div>
+						<p class="reason">${escapeHtml(movie.reason)}</p>
+					</div>
 				</li>
 			`;
 		}
 
-		buildChoices("#vibes", "Vibe", VIBES);
-		buildChoices("#energies", "Energy", ENERGIES);
+		function paramsFromState(picks, set) {
+			const params = new URLSearchParams();
+			params.set("vibe", picks.vibe);
+			params.set("energy", picks.energy);
+			params.set("with", picks.watching.replaceAll(" ", ""));
+			params.set("set", String(set));
+			return params;
+		}
+
+		function updateUrl(picks, set, replace = false) {
+			const url = `${location.pathname}?${paramsFromState(picks, set).toString()}`;
+			history[replace ? "replaceState" : "pushState"]({}, "", url);
+			share.href = url;
+		}
+
+		function renderResults(replaceUrl = false) {
+			const picks = selected();
+			if (!picks.vibe || !picks.energy || !picks.watching) return;
+			const resultsForSet = pickThree(picks, resultSet);
+			list.innerHTML = resultsForSet.map((item) => renderMovie(item, picks)).join("");
+			resultContext.textContent = `${picks.vibe} · ${picks.energy} · ${picks.watching}`;
+			results.hidden = false;
+			updateUrl(picks, resultSet, replaceUrl);
+			more.disabled = scoredMovies(picks).length <= 3;
+			results.scrollIntoView({ behavior: "smooth", block: "start" });
+		}
+
+		function updateSubmit() {
+			const picks = selected();
+			submit.disabled = !(picks.vibe && picks.energy && picks.watching) || movies.length === 0;
+			hint.textContent = submit.disabled ? "Pick one mood, one pace, and who is watching." : "Ready for a curated shortlist.";
+		}
+
+		function setRadio(name, value) {
+			const input = [...form.querySelectorAll(`input[name="${name}"]`)].find((option) => option.value.replaceAll(" ", "") === value.replaceAll(" ", ""));
+			if (input) input.checked = true;
+		}
+
+		function hydrateFromUrl() {
+			const params = new URLSearchParams(location.search);
+			if (!params.size) return;
+			setRadio("vibes", params.get("vibe") || "");
+			setRadio("energies", params.get("energy") || "");
+			setRadio("watching", params.get("with") || "");
+			resultSet = Number(params.get("set") || 0);
+			updateSubmit();
+			if (!submit.disabled) renderResults(true);
+		}
+
+		async function loadJson(path, fallback) {
+			const response = await fetch(path);
+			if (!response.ok) throw new Error(`Could not load ${path}`);
+			return response.json().catch(() => fallback);
+		}
+
+		async function init() {
+			buildChoices("#vibes", "Vibe", OPTIONS.vibe);
+			buildChoices("#energies", "Energy", OPTIONS.energy);
+			buildChoices("#watching", "Who's watching?", OPTIONS.watching);
+			try {
+				const [movieData, metaData] = await Promise.all([
+					loadJson("data/movies.json", []),
+					loadJson("data/tmdb-cache.json", []),
+				]);
+				movies = movieData;
+				metadata = new Map(metaData.map((item) => [String(item.tmdbId), item]));
+				error.hidden = true;
+				hydrateFromUrl();
+				updateSubmit();
+			} catch (err) {
+				error.textContent = "Could not load local data. Serve the project with `python3 -m http.server` instead of opening the file directly.";
+				error.hidden = false;
+				hint.textContent = "Local data failed to load.";
+			}
+		}
 
 		form.addEventListener("change", () => {
-			const { vibe, energy } = selected();
-			submit.disabled = !(vibe && energy);
+			resultSet = 0;
+			results.hidden = true;
+			list.innerHTML = "";
+			updateSubmit();
 		});
 
 		form.addEventListener("submit", (event) => {
 			event.preventDefault();
-			const { vibe, energy } = selected();
-			list.innerHTML = pickThree(vibe, energy).map((movie, index) => renderMovie(movie, index, vibe, energy)).join("");
-			results.hidden = false;
-			results.scrollIntoView({ behavior: "smooth", block: "start" });
-			reset.focus({ preventScroll: true });
+			resultSet = 0;
+			renderResults();
+		});
+
+		more.addEventListener("click", () => {
+			resultSet += 1;
+			renderResults();
 		});
 
 		reset.addEventListener("click", () => {
 			form.reset();
-			submit.disabled = true;
-			list.innerHTML = "";
+			resultSet = 0;
 			results.hidden = true;
-			picker.scrollIntoView({ behavior: "smooth", block: "start" });
+			list.innerHTML = "";
+			history.pushState({}, "", location.pathname);
+			updateSubmit();
 			form.querySelector("input").focus({ preventScroll: true });
 		});
+
+		addEventListener("popstate", () => {
+			form.reset();
+			results.hidden = true;
+			hydrateFromUrl();
+		});
+
+		init();
 	</script>
 </body>
 </html>

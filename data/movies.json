@@ -1,0 +1,212 @@
+[
+  {
+    "tmdbId": 346648,
+    "title": "Paddington 2",
+    "vibes": ["Cozy", "Fun"],
+    "energy": "Chill",
+    "watchingWith": ["Family", "Friends", "Date night"],
+    "tags": ["kind", "funny", "comfort"],
+    "boost": 3,
+    "reason": "Pure comfort without becoming sleepy, with jokes that work for almost anyone."
+  },
+  {
+    "tmdbId": 212778,
+    "title": "Chef",
+    "vibes": ["Cozy", "Fun"],
+    "energy": "Chill",
+    "watchingWith": ["Solo", "Family", "Friends"],
+    "tags": ["food", "feel-good", "reset"],
+    "boost": 2,
+    "reason": "A relaxed reset movie: warm, tasty, and easy to settle into."
+  },
+  {
+    "tmdbId": 414453,
+    "title": "Columbus",
+    "vibes": ["Cozy", "Sad", "Romantic"],
+    "energy": "Chill",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["quiet", "beautiful", "reflective"],
+    "boost": 2,
+    "reason": "Soft-spoken and reflective, perfect when you want emotion without melodrama."
+  },
+  {
+    "tmdbId": 331482,
+    "title": "Little Women",
+    "vibes": ["Cozy", "Romantic", "Sad"],
+    "energy": "Medium",
+    "watchingWith": ["Family", "Date night", "Friends"],
+    "tags": ["literary", "heart", "ensemble"],
+    "boost": 3,
+    "reason": "Cozy textures, romantic ache, and enough movement to keep the night alive."
+  },
+  {
+    "tmdbId": 120467,
+    "title": "The Grand Budapest Hotel",
+    "vibes": ["Cozy", "Fun"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Friends", "Date night"],
+    "tags": ["stylized", "witty", "precise"],
+    "boost": 2,
+    "reason": "A precise, candy-colored adventure that feels light but never thin."
+  },
+  {
+    "tmdbId": 1584,
+    "title": "School of Rock",
+    "vibes": ["Fun", "Cozy"],
+    "energy": "Hype",
+    "watchingWith": ["Family", "Friends"],
+    "tags": ["music", "crowd", "goofy"],
+    "boost": 3,
+    "reason": "Instant energy, low stakes, and still one of the safest crowd-pleasers."
+  },
+  {
+    "tmdbId": 587792,
+    "title": "Palm Springs",
+    "vibes": ["Fun", "Romantic"],
+    "energy": "Medium",
+    "watchingWith": ["Date night", "Friends"],
+    "tags": ["smart", "breezy", "time-loop"],
+    "boost": 3,
+    "reason": "Funny and romantic with a sharp premise, ideal when you want easy but not empty."
+  },
+  {
+    "tmdbId": 445571,
+    "title": "Game Night",
+    "vibes": ["Fun", "Tense"],
+    "energy": "Hype",
+    "watchingWith": ["Friends", "Date night"],
+    "tags": ["comedy", "chaos", "pace"],
+    "boost": 2,
+    "reason": "A joke machine with thriller pacing, great for a lively demo pick."
+  },
+  {
+    "tmdbId": 546554,
+    "title": "Knives Out",
+    "vibes": ["Fun", "Tense"],
+    "energy": "Medium",
+    "watchingWith": ["Family", "Friends", "Date night"],
+    "tags": ["mystery", "ensemble", "clever"],
+    "boost": 3,
+    "reason": "Slick mystery structure with enough humor to keep it approachable."
+  },
+  {
+    "tmdbId": 329865,
+    "title": "Arrival",
+    "vibes": ["Sad", "Tense"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["sci-fi", "emotional", "thoughtful"],
+    "boost": 3,
+    "reason": "Brainy tension that lands as a surprisingly emotional gut punch."
+  },
+  {
+    "tmdbId": 965150,
+    "title": "Aftersun",
+    "vibes": ["Sad"],
+    "energy": "Chill",
+    "watchingWith": ["Solo"],
+    "tags": ["memory", "intimate", "devastating"],
+    "boost": 2,
+    "reason": "Quiet, devastating, and perfect when the mood is reflective rather than loud."
+  },
+  {
+    "tmdbId": 666277,
+    "title": "Past Lives",
+    "vibes": ["Sad", "Romantic"],
+    "energy": "Chill",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["yearning", "restrained", "modern"],
+    "boost": 3,
+    "reason": "A grounded romantic ache that feels current, adult, and demo-ready."
+  },
+  {
+    "tmdbId": 38,
+    "title": "Eternal Sunshine of the Spotless Mind",
+    "vibes": ["Sad", "Romantic"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["surreal", "breakup", "inventive"],
+    "boost": 2,
+    "reason": "Inventive and emotionally messy in the exact way a sad-romantic night wants."
+  },
+  {
+    "tmdbId": 76,
+    "title": "Before Sunrise",
+    "vibes": ["Romantic", "Cozy"],
+    "energy": "Chill",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["talky", "intimate", "sincere"],
+    "boost": 3,
+    "reason": "Low-key, sincere, and built almost entirely out of chemistry."
+  },
+  {
+    "tmdbId": 1040148,
+    "title": "Rye Lane",
+    "vibes": ["Romantic", "Fun"],
+    "energy": "Medium",
+    "watchingWith": ["Date night", "Friends"],
+    "tags": ["fresh", "bright", "short"],
+    "boost": 3,
+    "reason": "Modern rom-com energy with style, color, and a short runtime."
+  },
+  {
+    "tmdbId": 660120,
+    "title": "The Worst Person in the World",
+    "vibes": ["Romantic", "Sad"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["messy", "modern", "adult"],
+    "boost": 2,
+    "reason": "Romantic, funny, and bruising in a way that feels very real."
+  },
+  {
+    "tmdbId": 705996,
+    "title": "Decision to Leave",
+    "vibes": ["Romantic", "Tense"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Date night"],
+    "tags": ["noir", "obsession", "sleek"],
+    "boost": 2,
+    "reason": "A sleek romantic mystery when you want desire and suspense together."
+  },
+  {
+    "tmdbId": 273481,
+    "title": "Sicario",
+    "vibes": ["Tense"],
+    "energy": "Medium",
+    "watchingWith": ["Solo", "Friends"],
+    "tags": ["procedural", "dread", "adult"],
+    "boost": 2,
+    "reason": "Controlled, adult tension that never needs to shout."
+  },
+  {
+    "tmdbId": 76341,
+    "title": "Mad Max: Fury Road",
+    "vibes": ["Tense", "Fun"],
+    "energy": "Hype",
+    "watchingWith": ["Solo", "Friends"],
+    "tags": ["action", "kinetic", "spectacle"],
+    "boost": 3,
+    "reason": "The cleanest answer for maximum momentum and zero boredom."
+  },
+  {
+    "tmdbId": 473033,
+    "title": "Uncut Gems",
+    "vibes": ["Tense"],
+    "energy": "Hype",
+    "watchingWith": ["Solo", "Friends"],
+    "tags": ["stress", "chaos", "pulse"],
+    "boost": 2,
+    "reason": "Relentless pressure, ideal if the goal is to feel your pulse."
+  },
+  {
+    "tmdbId": 290250,
+    "title": "The Nice Guys",
+    "vibes": ["Fun", "Tense"],
+    "energy": "Hype",
+    "watchingWith": ["Friends", "Date night"],
+    "tags": ["buddy", "crime", "sharp"],
+    "boost": 2,
+    "reason": "Fast, funny, and sharper than the average action-comedy fallback."
+  }
+]
