@@ -2,7 +2,7 @@
   {
     "tmdbId": 346648,
     "posterPath": "/1OJ9vkD5xPt3skC6KguyXAgagRZ.jpg",
-    "posterUrl": "data/posters/346648.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1OJ9vkD5xPt3skC6KguyXAgagRZ.jpg",
     "releaseDate": "2017-11-09",
     "runtime": 104,
     "voteAverage": 7.5,
@@ -12,7 +12,7 @@
   {
     "tmdbId": 212778,
     "posterPath": "/hyp8EXDmO4dSC8V6Q5jU7gD1kcg.jpg",
-    "posterUrl": "data/posters/212778.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hyp8EXDmO4dSC8V6Q5jU7gD1kcg.jpg",
     "releaseDate": "2014-05-08",
     "runtime": 114,
     "voteAverage": 7.1,
@@ -22,7 +22,7 @@
   {
     "tmdbId": 414453,
     "posterPath": "/6tk0xmn9k5HjUeXsnhxIa94sFXP.jpg",
-    "posterUrl": "data/posters/414453.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/6tk0xmn9k5HjUeXsnhxIa94sFXP.jpg",
     "releaseDate": "2017-08-04",
     "runtime": 104,
     "voteAverage": 7.1,
@@ -32,7 +32,7 @@
   {
     "tmdbId": 331482,
     "posterPath": "/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
-    "posterUrl": "data/posters/331482.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/yn5ihODtZ7ofn8pDYfxCmxh8AXI.jpg",
     "releaseDate": "2019-12-25",
     "runtime": 135,
     "voteAverage": 7.9,
@@ -42,7 +42,7 @@
   {
     "tmdbId": 120467,
     "posterPath": "/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
-    "posterUrl": "data/posters/120467.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
     "releaseDate": "2014-02-26",
     "runtime": 100,
     "voteAverage": 8,
@@ -52,7 +52,7 @@
   {
     "tmdbId": 1584,
     "posterPath": "/zXLXaepIBvFVLU25DH3wv4IPSbe.jpg",
-    "posterUrl": "data/posters/1584.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/zXLXaepIBvFVLU25DH3wv4IPSbe.jpg",
     "releaseDate": "2003-10-03",
     "runtime": 109,
     "voteAverage": 7.1,
@@ -62,7 +62,7 @@
   {
     "tmdbId": 587792,
     "posterPath": "/gnAfqiV7yO3Jq9IntTmwkcaICqc.jpg",
-    "posterUrl": "data/posters/587792.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/gnAfqiV7yO3Jq9IntTmwkcaICqc.jpg",
     "releaseDate": "2020-07-10",
     "runtime": 90,
     "voteAverage": 7.3,
@@ -72,7 +72,7 @@
   {
     "tmdbId": 445571,
     "posterPath": "/85R8LMyn9f2Lev2YPBF8Nughrkv.jpg",
-    "posterUrl": "data/posters/445571.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/85R8LMyn9f2Lev2YPBF8Nughrkv.jpg",
     "releaseDate": "2018-02-22",
     "runtime": 100,
     "voteAverage": 6.9,
@@ -82,7 +82,7 @@
   {
     "tmdbId": 546554,
     "posterPath": "/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
-    "posterUrl": "data/posters/546554.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/pThyQovXQrw2m0s9x82twj48Jq4.jpg",
     "releaseDate": "2019-11-27",
     "runtime": 130,
     "voteAverage": 7.8,
@@ -92,7 +92,7 @@
   {
     "tmdbId": 329865,
     "posterPath": "/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
-    "posterUrl": "data/posters/329865.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/pEzNVQfdzYDzVK0XqxERIw2x2se.jpg",
     "releaseDate": "2016-11-10",
     "runtime": 116,
     "voteAverage": 7.6,
@@ -102,7 +102,7 @@
   {
     "tmdbId": 965150,
     "posterPath": "/evKz85EKouVbIr51zy5fOtpNRPg.jpg",
-    "posterUrl": "data/posters/965150.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/evKz85EKouVbIr51zy5fOtpNRPg.jpg",
     "releaseDate": "2022-10-21",
     "runtime": 101,
     "voteAverage": 7.7,
@@ -112,7 +112,7 @@
   {
     "tmdbId": 666277,
     "posterPath": "/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg",
-    "posterUrl": "data/posters/666277.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/k3waqVXSnvCZWfJYNtdamTgTtTA.jpg",
     "releaseDate": "2023-06-02",
     "runtime": 106,
     "voteAverage": 7.7,
@@ -122,7 +122,7 @@
   {
     "tmdbId": 38,
     "posterPath": "/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg",
-    "posterUrl": "data/posters/38.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/5MwkWH9tYHv3mV9OdYTMR5qreIz.jpg",
     "releaseDate": "2004-03-19",
     "runtime": 108,
     "voteAverage": 8.1,
@@ -132,7 +132,7 @@
   {
     "tmdbId": 76,
     "posterPath": "/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg",
-    "posterUrl": "data/posters/76.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/kf1Jb1c2JAOqjuzA3H4oDM263uB.jpg",
     "releaseDate": "1995-01-27",
     "runtime": 101,
     "voteAverage": 8,
@@ -142,7 +142,7 @@
   {
     "tmdbId": 1040148,
     "posterPath": "/8ChIb3WzYAcza1vrXR56v510MWk.jpg",
-    "posterUrl": "data/posters/1040148.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/8ChIb3WzYAcza1vrXR56v510MWk.jpg",
     "releaseDate": "2023-03-17",
     "runtime": 82,
     "voteAverage": 7.1,
@@ -152,7 +152,7 @@
   {
     "tmdbId": 660120,
     "posterPath": "/1NxGNQchGBTHXJ6RShLY1IlZqWn.jpg",
-    "posterUrl": "data/posters/660120.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/1NxGNQchGBTHXJ6RShLY1IlZqWn.jpg",
     "releaseDate": "2021-10-13",
     "runtime": 128,
     "voteAverage": 7.5,
@@ -162,7 +162,7 @@
   {
     "tmdbId": 705996,
     "posterPath": "/zI8KZ4EdLUymWKX1YEkpZ0gtPUa.jpg",
-    "posterUrl": "data/posters/705996.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/zI8KZ4EdLUymWKX1YEkpZ0gtPUa.jpg",
     "releaseDate": "2022-06-29",
     "runtime": 139,
     "voteAverage": 7.4,
@@ -172,7 +172,7 @@
   {
     "tmdbId": 273481,
     "posterPath": "/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
-    "posterUrl": "data/posters/273481.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/lz8vNyXeidqqOdJW9ZjnDAMb5Vr.jpg",
     "releaseDate": "2015-09-17",
     "runtime": 121,
     "voteAverage": 7.4,
@@ -182,7 +182,7 @@
   {
     "tmdbId": 76341,
     "posterPath": "/hA2ple9q4qnwxp3hKVNhroipsir.jpg",
-    "posterUrl": "data/posters/76341.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/hA2ple9q4qnwxp3hKVNhroipsir.jpg",
     "releaseDate": "2015-05-13",
     "runtime": 120,
     "voteAverage": 7.6,
@@ -192,7 +192,7 @@
   {
     "tmdbId": 473033,
     "posterPath": "/6XN1vxHc7kUSqNWtaQKN45J5x2v.jpg",
-    "posterUrl": "data/posters/473033.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/6XN1vxHc7kUSqNWtaQKN45J5x2v.jpg",
     "releaseDate": "2019-12-13",
     "runtime": 135,
     "voteAverage": 7.2,
@@ -202,7 +202,7 @@
   {
     "tmdbId": 290250,
     "posterPath": "/clq4So9spa9cXk3MZy2iMdqkxP2.jpg",
-    "posterUrl": "data/posters/290250.svg",
+    "posterUrl": "https://image.tmdb.org/t/p/w500/clq4So9spa9cXk3MZy2iMdqkxP2.jpg",
     "releaseDate": "2016-05-15",
     "runtime": 116,
     "voteAverage": 7.1,

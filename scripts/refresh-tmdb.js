@@ -6,6 +6,7 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const moviesPath = path.join(root, "data", "movies.json");
 const cachePath = path.join(root, "data", "tmdb-cache.json");
+const posterDir = path.join(root, "data", "posters");
 const envPath = path.join(root, ".env");
 
 async function loadEnv() {
@@ -36,13 +37,19 @@ async function writeLocalPoster(tmdbId, posterPath) {
   await fs.mkdir(posterDir, { recursive: true });
   const filename = `${tmdbId}.jpg`;
   const filePath = path.join(posterDir, filename);
-  const response = await fetch(remoteUrl);
-  if (!response.ok) {
-    throw new Error(`Poster ${response.status} for ${tmdbId}`);
-  }
 
-  await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()));
-  return `data/posters/${filename}`;
+  try {
+    const response = await fetch(remoteUrl);
+    if (!response.ok) {
+      throw new Error(`Poster ${response.status}`);
+    }
+
+    await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()));
+    return `data/posters/${filename}`;
+  } catch (error) {
+    console.warn(`Poster download failed for ${tmdbId}: ${error.message}`);
+    return null;
+  }
 }
 
 async function fetchMovie(movie) {
@@ -58,10 +65,15 @@ async function fetchMovie(movie) {
   }
 
   const data = await response.json();
+  const posterPath = data.poster_path || null;
+  const remoteUrl = remotePosterUrl(posterPath);
+  const localPosterUrl = await writeLocalPoster(movie.tmdbId, posterPath);
+
   return {
     tmdbId: movie.tmdbId,
-    posterPath: data.poster_path || null,
-    posterUrl: posterUrl(data.poster_path),
+    posterPath,
+    posterUrl: localPosterUrl || remoteUrl,
+    remotePosterUrl: remoteUrl,
     releaseDate: data.release_date || null,
     runtime: data.runtime || null,
     voteAverage: typeof data.vote_average === "number" ? Number(data.vote_average.toFixed(1)) : null,
