@@ -497,6 +497,20 @@
 			`;
 		}
 
+		function tmdbUrlFor(movie) {
+			return `https://www.themoviedb.org/movie/${movie.tmdbId}`;
+		}
+
+		function overviewMarkup(meta) {
+			if (!meta.overview) return "";
+			return `<p class="overview">${escapeHtml(meta.overview)}</p>`;
+		}
+
+		function tmdbLinkMarkup(movie) {
+			const url = tmdbUrlFor(movie);
+			return `<a class="tmdb-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">View on TMDb</a>`;
+		}
+
 		function renderMovie(item, picks) {
 			const movie = item.movie;
 			const meta = metadataFor(movie);
@@ -511,6 +525,8 @@
 						<h3>${escapeHtml(movie.title)}</h3>
 						<div class="meta">${escapeHtml(year)} · ${escapeHtml(runtime)}${escapeHtml(rating)} · ${escapeHtml(picks.vibe)} + ${escapeHtml(picks.energy)}</div>
 						<p class="reason">${escapeHtml(movie.reason)}</p>
+						${overviewMarkup(meta)}
+						${tmdbLinkMarkup(movie)}
 					</div>
 				</li>
 			`;
