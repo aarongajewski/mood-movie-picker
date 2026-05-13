@@ -25,8 +25,24 @@ function token() {
   return process.env.TMDB_TOKEN || process.env.TMDB_API_READ_ACCESS_TOKEN;
 }
 
-function posterUrl(posterPath) {
+function remotePosterUrl(posterPath) {
   return posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : null;
+}
+
+async function writeLocalPoster(tmdbId, posterPath) {
+  const remoteUrl = remotePosterUrl(posterPath);
+  if (!remoteUrl) return null;
+
+  await fs.mkdir(posterDir, { recursive: true });
+  const filename = `${tmdbId}.jpg`;
+  const filePath = path.join(posterDir, filename);
+  const response = await fetch(remoteUrl);
+  if (!response.ok) {
+    throw new Error(`Poster ${response.status} for ${tmdbId}`);
+  }
+
+  await fs.writeFile(filePath, Buffer.from(await response.arrayBuffer()));
+  return `data/posters/${filename}`;
 }
 
 async function fetchMovie(movie) {

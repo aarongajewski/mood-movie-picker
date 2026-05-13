@@ -280,28 +280,6 @@
 			color: #dfe4ed;
 		}
 
-		.overview {
-			display: -webkit-box;
-			margin: 10px 0 0;
-			overflow: hidden;
-			color: var(--muted);
-			font-size: .88rem;
-			line-height: 1.45;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: 2;
-		}
-
-		.tmdb-link {
-			display: inline-block;
-			margin-top: 12px;
-			color: var(--accent-2);
-			font-size: .85rem;
-			font-weight: 750;
-			text-decoration: none;
-		}
-
-		.tmdb-link:hover { text-decoration: underline; }
-
 		.error {
 			border: 1px solid rgba(255, 155, 155, .35);
 			border-radius: 16px;
@@ -486,29 +464,22 @@
 			return metadata.get(String(movie.tmdbId)) || {};
 		}
 
+		function posterSrc(movie, meta) {
+			const cached = meta.posterUrl;
+			if (cached && !/^https?:/i.test(cached)) return cached;
+			return cached || `data/posters/${movie.tmdbId}.jpg`;
+		}
+
 		function posterMarkup(movie, meta) {
 			const title = escapeHtml(movie.title);
-			if (!meta.posterUrl) return `<div class="poster"><div class="poster-fallback">${title}</div></div>`;
+			const src = posterSrc(movie, meta);
+			if (!src) return `<div class="poster"><div class="poster-fallback">${title}</div></div>`;
 			return `
 				<div class="poster">
-					<img src="${escapeHtml(meta.posterUrl)}" alt="${title} poster" loading="lazy" onerror="this.remove()">
+					<img src="${escapeHtml(src)}" alt="${title} poster" loading="lazy" decoding="async" onerror="this.classList.add('is-missing')">
 					<div class="poster-fallback">${title}</div>
 				</div>
 			`;
-		}
-
-		function tmdbUrlFor(movie) {
-			return `https://www.themoviedb.org/movie/${movie.tmdbId}`;
-		}
-
-		function overviewMarkup(meta) {
-			if (!meta.overview) return "";
-			return `<p class="overview">${escapeHtml(meta.overview)}</p>`;
-		}
-
-		function tmdbLinkMarkup(movie) {
-			const url = tmdbUrlFor(movie);
-			return `<a class="tmdb-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">View on TMDb</a>`;
 		}
 
 		function renderMovie(item, picks) {
@@ -525,8 +496,6 @@
 						<h3>${escapeHtml(movie.title)}</h3>
 						<div class="meta">${escapeHtml(year)} · ${escapeHtml(runtime)}${escapeHtml(rating)} · ${escapeHtml(picks.vibe)} + ${escapeHtml(picks.energy)}</div>
 						<p class="reason">${escapeHtml(movie.reason)}</p>
-						${overviewMarkup(meta)}
-						${tmdbLinkMarkup(movie)}
 					</div>
 				</li>
 			`;

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="750" viewBox="0 0 500 750" role="img" aria-label="Chef poster">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="hsl(18 68% 45%)"/>
+      <stop offset="100%" stop-color="hsl(46 54% 26%)"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="750" fill="url(#g)"/>
+  <text x="40" y="620" fill="#f7f1e8" font-family="Inter,Segoe UI,sans-serif" font-size="46" font-weight="800">Chef</text>
+</svg>
